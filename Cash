@@ -1,0 +1,43 @@
+#include <stdio.h>
+#include <math.h>
+#include <cs50.h>
+
+int main(void)
+{
+    int para_ustu;
+    int kalan = 0;
+    float dolar_para_ustu;
+    
+    do
+    {
+        dolar_para_ustu = get_float("Para üstünü girin:: ");
+        
+    } while (dolar_para_ustu <= 0);
+    
+    para_ustu = round(dolar_para_ustu * 100);
+    
+    while (para_ustu>=25)
+    {
+        para_ustu = para_ustu - 25;
+        kalan++;
+    }
+
+    while (para_ustu>=10)
+    {
+        para_ustu = para_ustu - 10;
+        kalan++;
+    }
+
+    while (para_ustu>=5)
+    {
+        para_ustu = para_ustu - 5;
+        kalan++;
+    }
+
+    while (para_ustu>=1)
+       { para_ustu = para_ustu -1;
+        kalan++;
+       }
+
+       printf("İhtiyaç olan bozukluk miktarı: %i\n", kalan);
+} 
